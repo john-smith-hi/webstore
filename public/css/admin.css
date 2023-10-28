@@ -1,0 +1,13 @@
+.search-ajax-result{
+    background-color: white;
+}
+
+.media {
+    cursor: pointer;
+}
+.media:hover{
+    background-color: #007bff;
+}
+.media-body div{
+    padding: 5px 10px;
+}

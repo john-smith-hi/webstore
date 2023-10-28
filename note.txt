@@ -1,0 +1,17 @@
+0:Male, 1:Female
+0:User, 1:Admin, 2:Customer
+Product.status_storage: 1:Mở, 0:Đóng - nhập/xuất kho
+Product.status_sell: 1:Mở, 0:Đóng - nhập/xuất bán hàng
+Order.status: 0:Chờ xử lý, 1:Đang giao hàng, 2:Đã giao hàng, 3:Hoàn thành, 4:Hủy
+order.status_payment: 0:Chưa thanh toán, 1:Đã thanh toán
+storage_histories.status: 0:Nhập kho, 1:Xuất kho
+promotion_products.status: 0:Đóng, 1:Mở
+sale_production.status: 0:Đóng, 1:Mở
+
+#ckeditor
+#ckeditor1
+#ckeditor2
+#ckeditor3
+
+search
+
