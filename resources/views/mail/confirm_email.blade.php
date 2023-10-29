@@ -17,7 +17,7 @@
 		<div class="container">
 			<div class="row justify-content-center">
 				<div class="col-md-6 text-center mb-5">
-					{{-- <h2 class="heading-section">PenWeb xác thực email khách hàng</h2> --}}
+					<h2 class="heading-section">{{env('STORE_NAME','')}} xác thực email khách hàng</h2>
 				</div>
 			</div>
 			<div class="row justify-content-center">

@@ -32,7 +32,7 @@
                                     <td class="align-center">{{$key+1}}</td>
                                     <td>
                                         <a href="{{route('user.product.index',['slug'=>$product->slug])}}">
-                                            <img src="{{ProductHelper::FirstImage($product->id)}}" alt="" style="width:50px">
+                                            <img src="{{ProductHelper::FirstImage($product->product_id)}}" alt="" style="width:50px; height:50px">
                                             {{$product->name}}
                                         </a>
                                     </td>

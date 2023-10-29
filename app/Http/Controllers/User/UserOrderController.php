@@ -14,7 +14,7 @@ class UserOrderController extends Controller
     public function index($id){
         $order = Order::where('id',$id)->where('user_id',Auth::user()->id)->first();
         $products = OrderProduct::join('products','order_products.product_id','=','products.id')
-                                ->select('order_products.origin_price','order_products.final_price','order_products.quantity','products.name','products.slug')
+                                ->select('order_products.product_id','order_products.origin_price','order_products.final_price','order_products.quantity','products.name','products.slug')
                                 ->where("order_id",$order->id);
         $products = $products->paginate(env('USER_PAGINATE_ORDER_NUMBER',5));
         return view("user.pages.order",[

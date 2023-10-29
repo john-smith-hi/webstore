@@ -46,7 +46,7 @@
                                     <td>{{$key+1}}</td>
                                     <td class="align-middle">
                                         <a href="{{route('user.product.index',['slug'=>$product->slug])}}">
-                                            <img src="{{$firstImage}}" alt="" style="width: 50px;"> {{$product->name}}
+                                            <img src="{{$firstImage}}" alt="" style="width: 50px; height:50px"> {{$product->name}}
                                         </a>
                                     </td>
                                     @if($isSaling)

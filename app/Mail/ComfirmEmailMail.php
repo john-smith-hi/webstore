@@ -35,7 +35,7 @@ class ComfirmEmailMail extends Mailable
     public function envelope()
     {
         return new Envelope(
-            subject: 'PenWeb verify your Email',
+            subject: env('STORE_NAME','').' verify your Email',
         );
     }
 
