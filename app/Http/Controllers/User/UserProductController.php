@@ -31,7 +31,8 @@ class UserProductController extends Controller
         return view('user.pages.productdetail',[
             'product' => $product,
             'relativeProducts' => $relativeProducts,
-            'pagename' => 'Chi tiết sản phẩm',
+            'pagename' => 'Sản phẩm '.$product->name,
+            'title' => $product->name.' - '.env('STORE_NAME','PenWeb'),
         ]);
     }
 }

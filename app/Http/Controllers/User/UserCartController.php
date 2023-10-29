@@ -14,6 +14,7 @@ class UserCartController extends Controller
         $carts = Cart::where("user_id",Auth::user()->id)->get(); 
         return view('user.pages.cart',[
             'pagename' => 'Giỏ hàng',
+            'title' => 'Giỏ hàng',
             'carts'=> $carts,
         ]);
     }

@@ -9,7 +9,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-  <title></title>
+  <title>@if(!empty($title))
+          {{$title}}
+         @else
+          {{'Quản trị viên - '.env('STORE_NAME','PenWeb')}}
+         @endif
+  </title>
 
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="{{ asset('plugins/fontawesome-free/css/all.min.css') }}">

@@ -10,6 +10,7 @@ class UserAboutusController extends Controller
     public function index(){
         return view('user.pages.aboutus',[
             'pagename' => 'Giới thiệu',
+            'title' => 'Giới thiệu - '.env('STORE_NAME','PenWeb'),
         ]);
     }
 }

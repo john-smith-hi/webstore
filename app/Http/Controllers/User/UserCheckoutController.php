@@ -29,6 +29,7 @@ class UserCheckoutController extends Controller
         }
         return view('user.pages.checkout',[
             'pagename' => 'Thanh toán',
+            'title' => 'Thanh toán',
         ]);
     }
 
@@ -112,6 +113,7 @@ class UserCheckoutController extends Controller
                             'pagename' => 'Thanh toán',
                             'product_id' => $product_id_arr,
                             'quantity' => $quantity_arr,
+                            'title' => 'Thanh toán - '.env('STORE_NAME','PenWeb'),
                         ])->with('success','Đặt hàng thành công. Vui lòng kiểm tra lại lịch sử đặt hàng');
                     }
                     else{
@@ -119,11 +121,13 @@ class UserCheckoutController extends Controller
                             'pagename' => 'Thanh toán',
                             'product_id' => $product_id_arr,
                             'quantity' => $quantity_arr,
+                            'title'=> 'Thanh toán - '.env('STORE_NAME','PenWeb'),
                         ])->with('success','Đặt hàng thành công. Vui lòng kiểm tra lại lịch sử đặt hàng theo email đã cung cấp');
                     }
                 } catch (\Throwable $th) {
                     return view('user.pages.checkout',[
                         'pagename' => 'Thanh toán',
+                        'title' => 'Thanh toán - '.env('STORE_NAME','PenWeb'),
                         'product_id' => $product_id_arr,
                         'quantity' => $quantity_arr,
                     ])->with('error','Đặt hàng thất bại');
@@ -141,6 +145,7 @@ class UserCheckoutController extends Controller
         return view('user.pages.checkouthistory',[
             'orders' => $orders,
             'pagename' => 'Lịch sử đặt hàng',
+            'title' => 'Lịch sử đặt hàng - '.env('STORE_NAME','PenWeb'),
         ]);
     }
 
@@ -150,7 +155,7 @@ class UserCheckoutController extends Controller
         foreach ($carts as $key => $carts) {
             $link .= 'product_id[]='.$carts->product_id.'&quantity[]='.$carts->quantity.'&';
         }
-        return redirect($link);
+        return redirect($link)->with('title','Thanh toán giỏ hàng - '.env('STORE_NAME','PenWeb'));
     }
 
 }

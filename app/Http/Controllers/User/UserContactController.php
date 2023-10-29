@@ -11,6 +11,7 @@ class UserContactController extends Controller
     public function index(){
         return view('user.pages.contact',[
             'pagename' => 'Liên hệ',
+            'title' => 'Liên hệ - '.env('STORE_NAME','PenWeb'),
         ]);
     }
 
@@ -21,9 +22,15 @@ class UserContactController extends Controller
             Mail::send('mail.contact', compact('title', 'body'), function($email){
                 $email->to(env('EMAIL_CONTACT','leminhnhat10081999@gmail.com'), 'Liên hệ');
             });
-            return view('user.pages.contact',['pagename'=>'Liên hệ'])->with('success','Gửi thành công');
+            return view('user.pages.contact',[
+                'pagename'=>'Liên hệ',
+                'title' => 'Liên hệ - '.env('STORE_NAME','PenWeb'),
+            ])->with('success','Gửi thành công');
         } catch (\Throwable $th) {
-            return view('user.pages.contact',['pagename'=>'Liên hệ'])->with('error','Gửi thất bại');
+            return view('user.pages.contact',[
+                'pagename'=>'Liên hệ',
+                'title' => 'Liên hệ - '.env('STORE_NAME','PenWeb'),
+            ])->with('error','Gửi thất bại');
         }
         
     }

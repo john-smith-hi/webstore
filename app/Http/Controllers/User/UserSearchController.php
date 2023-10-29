@@ -48,6 +48,7 @@ class UserSearchController extends Controller
             'name_search' => $name,
             'products' => $products,
             'pagename' => 'Tìm kiếm',
+            'title' => 'Tìm kiếm - '.env('STORE_NAME','PenWeb'),
         ]);
     }
 }

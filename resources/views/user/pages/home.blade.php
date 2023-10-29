@@ -4,10 +4,10 @@
 @endsection
 @section('content')
     @include('user.layouts.featured')
-    {{-- @include('user.layouts.offer') --}}
-    @include('user.layouts.categorieshome')
-    @include('user.layouts.subscribe')
-    @include('user.layouts.products')
+    @include('user.layouts.trendproducts')
+    @include('user.layouts.saleproducts')
+    @include('user.layouts.hintproducts')
+    @include('user.layouts.newproducts')
     @include('user.layouts.vendor')
 @endsection
 

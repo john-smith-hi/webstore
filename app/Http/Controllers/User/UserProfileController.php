@@ -13,6 +13,7 @@ class UserProfileController extends Controller
     public function index(){
         return view("user.pages.profile",[
             'pagename' => 'Thông tin cá nhân',
+            'title' => 'Thông tin cá nhân - '.env('STORE_NAME','PenWeb'),
         ]);
     }
 

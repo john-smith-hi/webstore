@@ -3,10 +3,8 @@
 
 <head>
     <meta charset="utf-8">
-    <title>@if(!empty($title)){{$title}}@endif</title>
+    <title>@if(!empty($title)){{$title}}@else{{env('STORE_NAME','PenWeb')}}@endif</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="Free HTML Templates" name="keywords">
-    <meta content="Free HTML Templates" name="description">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">

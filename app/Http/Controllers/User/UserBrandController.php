@@ -14,6 +14,7 @@ class UserBrandController extends Controller
     public function index(){
         return view("user.pages.brand",[
             "pagename"=> "Thương hiệu",
+            'title' => 'Thương hiệu - '.env('STORE_NAME','PenWeb'),
         ]);
     }
 
@@ -28,6 +29,7 @@ class UserBrandController extends Controller
                 'brand' => $brand,
                 'products'=> $products,
                 "pagename"=> $pagename,
+                'title' => 'Thương hiệu '.$brand->name.' - '.env('STORE_NAME','PenWeb'),
             ]);
         }
     }

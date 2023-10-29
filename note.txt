@@ -13,5 +13,23 @@ sale_production.status: 0:Đóng, 1:Mở
 #ckeditor2
 #ckeditor3
 
-search
+SEO
+    webmaster google
+    google Analytics 
+    img alt
+    h1
+    robots.txt
+    sitemap.xml
+    meta
+    title
+    strong
+
+HTTPS
+Domain
+
+Sản phẩm bán chạy - trong tháng
+Sản phẩm đang khuyến mãi
+Sản phẩm mới ra mắt
+Sản phẩm gợi ý
+
 

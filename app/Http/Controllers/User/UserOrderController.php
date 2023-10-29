@@ -21,6 +21,7 @@ class UserOrderController extends Controller
             'total' => $order->total,
             'products' => $products,
             'pagename' => 'Chi tiết đơn hàng',
+            'title' => 'Đơn hàng',
         ]);
     }
 
