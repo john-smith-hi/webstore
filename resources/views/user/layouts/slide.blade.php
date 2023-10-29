@@ -4,6 +4,7 @@
         $slides = Slide::orderBy('id','desc')->get();
     @endphp
     <div class="carousel-inner">
+    @if(!empty($slides) && count($slides)>0)
         @foreach ($slides as $key => $slide)
         <div class="carousel-item @if($key==1) {{'active'}} @endif" style="height: 410px;">
             <img class="img-fluid" src="{{$slide->image}}" alt="Image">
@@ -27,4 +28,5 @@
             <span class="carousel-control-next-icon mb-n2"></span>
         </div>
     </a>
+    @endif
 </div>
