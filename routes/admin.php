@@ -51,6 +51,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/test', [TestController::class, 'index'])->middleware([IsAdmin::class])->name('admin.test.index');
+Route::get('/link', function () {
+    Artisan::call('storage:link');
+})->middleware([IsAdmin::class])->name('admin.link.index');
 
 Route::middleware([UnLogin::class])->group(function(){
     Route::prefix('login')->group(function(){
