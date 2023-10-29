@@ -14,7 +14,7 @@ class ImageHelper{
         $file = $request->file($nameRequest);
         $ext = $file->getClientOriginalExtension();
         if($ext === 'php') return redirect()->route('login.index');
-        $path = '/storage/'.$file->store($nameStoreAs);
+        $path = '/public/storage/'.$file->store($nameStoreAs);
         return $path;
     }
 
@@ -24,7 +24,7 @@ class ImageHelper{
         foreach($files as $file){
             $ext = $file->getClientOriginalExtension();
             if($ext === 'php') return redirect()->route('login.index');
-            $pathx = '/storage/'.$file->store($nameStoreAs);
+            $pathx = '/public/storage/'.$file->store($nameStoreAs);
             $path[] = $pathx;
         }
         return $path;

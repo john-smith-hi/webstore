@@ -6,7 +6,7 @@
             use App\Models\Product;
             use Illuminate\Support\Carbon;
             $now = Carbon::now();
-            $sales = SaleProduct::join('products','sale_products.product_id','products.id')->where('sale_products.start_date', '<=', $now)->where('sale_products.finish_date', '>=', $now);
+            $sales = SaleProduct::join('products','sale_products.product_id','products.id')->where('sale_products.start_date', '<=', $now)->where('sale_products.finish_date', '>=', $now)->take(env('USER_OFFER_HOME',2));
         @endphp
         @if($sales->count()>=2)
             @php
