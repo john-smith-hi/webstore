@@ -1,35 +1,24 @@
 <!-- Vendor Start -->
 <div class="container-fluid py-5">
+    <div class="text-center mb-4">
+        <h2 class="section-title px-5"><span class="px-2">Các thương hiệu sản phẩm</span></h2>
+    </div>
     <div class="row px-xl-5">
         <div class="col">
             <div class="owl-carousel vendor-carousel">
                 @php
-                    
+                    use App\Models\Brand;
+                    $brands = Brand::orderBy('id','desc')->get();
                 @endphp
-                <div class="vendor-item border p-4">
-                    <img src="img/vendor-1.jpg" alt="">
-                </div>
-                <div class="vendor-item border p-4">
-                    <img src="img/vendor-2.jpg" alt="">
-                </div>
-                <div class="vendor-item border p-4">
-                    <img src="img/vendor-3.jpg" alt="">
-                </div>
-                <div class="vendor-item border p-4">
-                    <img src="img/vendor-4.jpg" alt="">
-                </div>
-                <div class="vendor-item border p-4">
-                    <img src="img/vendor-5.jpg" alt="">
-                </div>
-                <div class="vendor-item border p-4">
-                    <img src="img/vendor-6.jpg" alt="">
-                </div>
-                <div class="vendor-item border p-4">
-                    <img src="img/vendor-7.jpg" alt="">
-                </div>
-                <div class="vendor-item border p-4">
-                    <img src="img/vendor-8.jpg" alt="">
-                </div>
+                @if(!empty($brands) && count($brands)>0)
+                    @foreach($brands as $brand)
+                        <div class="vendor-item border p-4">
+                            <a href="{{route('user.brand.detail',['slug'=>$brand->slug])}}">
+                                <img src="{{$brand->image}}" alt="{{$brand->name}}" class="w-100">
+                            </a>
+                        </div>
+                    @endforeach
+                @endif
             </div>
         </div>
     </div>

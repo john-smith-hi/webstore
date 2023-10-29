@@ -16,7 +16,7 @@ use Illuminate\Support\Carbon;
 
 class UserHomeController extends Controller
 {
-    public function index(){ 
+    public function index(){
         return view('user.pages.home',[
             'title' => 'Trang chủ - '.env('STORE_NAME','PenWeb'),
         ]);

@@ -41,7 +41,7 @@
             <p class="mb-md-0 text-center text-md-left text-dark">
                 &copy; <a class="text-dark font-weight-semi-bold" href="#">{{env('STORE_NAME','PenWeb')}}</a>. All Rights Reserved. Designed
                 by
-                <a class="text-dark font-weight-semi-bold" href="#">LMN</a> 2023 - {{date('Y')}}
+                <a class="text-dark font-weight-semi-bold" href="#">LMN</a> 2022 - {{date('Y')}}
             </p>
         </div>
     </div>
