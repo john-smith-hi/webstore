@@ -20,8 +20,9 @@
                             <a href="#" class="nav-item nav-link">{{$category->name}}</a>
                         @else
                             <div class="nav-item dropdown">
-                                <a href="{{route('user.search').'?category[]='.$category->slug}}" class="nav-link" data-toggle="dropdown">{{$category->name}} <i class="fa fa-angle-down float-right mt-1"></i></a>
+                                <a href="#" class="nav-link" data-toggle="dropdown">{{$category->name}} <i class="fa fa-angle-down float-right mt-1"></i></a>
                                 <div class="dropdown-menu position-absolute bg-secondary border-0 rounded-0 w-100 m-0">
+                                    <a href="{{route('user.search').'?category[]='.$category->slug}}" class="dropdown-item">{{$category->name}}</a>
                             @foreach($childCategories as $childCategory)
                                     <a href="{{route('user.search').'?category[]='.$childCategory->slug}}" class="dropdown-item">{{$childCategory->name}}</a>
                             @endforeach
