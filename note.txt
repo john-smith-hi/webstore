@@ -27,9 +27,9 @@ SEO
 HTTPS
 Domain
 
-Sản phẩm bán chạy - trong tháng
-Sản phẩm đang khuyến mãi
-Sản phẩm mới ra mắt
-Sản phẩm gợi ý
+Bình luận - Đánh giá Admin
+Sản phẩm - bổ sung cột đánh giá Admin
+softdelete
+log
 
 

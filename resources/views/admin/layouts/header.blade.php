@@ -47,6 +47,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <a href="{{route('admin.order.index')}}" class="nav-link">Đơn hàng</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
+        <a href="{{route('admin.account.index')}}" class="nav-link">Tài khoản</a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="{{route('admin.global_var.index')}}" class="nav-link">Biến toàn cục</a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
         <a href="{{route('logout')}}" class="nav-link">Đăng xuất</a>
       </li>
     </ul>

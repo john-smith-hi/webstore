@@ -15,6 +15,7 @@ use App\Http\Controllers\Admin\AdminOrderController;
 use App\Http\Controllers\Admin\AdminProductController;
 use App\Http\Controllers\Admin\AdminProfileController;
 use App\Http\Controllers\Admin\AdminRatingController;
+use App\Http\Controllers\Admin\AdminReviewController;
 use App\Http\Controllers\Admin\AdminSlideController;
 use App\Http\Controllers\Admin\AdminStorageController;
 use App\Http\Controllers\AdminSaleController;
@@ -135,19 +136,14 @@ Route::middleware(IsAdmin::class)->group(function(){
             Route::get('', [AdminOrderController::class, 'index'])->name('admin.order.index');
             Route::get('update/{id}', [AdminOrderController::class, 'update'])->name('admin.order.update');
             Route::post('edit/{id}', [AdminOrderController::class, 'edit'])->name('admin.order.edit');
-            Route::get('delete/{id}', [AdminOrderController::class, 'delete'])->name('admin.order.delete');
+            Route::post('delete/{id}', [AdminOrderController::class, 'delete'])->name('admin.order.delete');
         })->name('admin.order');
-        Route::prefix('comment')->group(function(){
-            Route::get('', [AdminCommentController::class, 'index'])->name('admin.comment.index');
-            Route::get('update/{id}', [AdminCommentController::class, 'update'])->name('admin.comment.update');
-            Route::post('edit/{id}', [AdminCommentController::class, 'edit'])->name('admin.comment.edit');
-            Route::get('delete/{id}',[AdminCommentController::class, 'delete'])->name('admin.comment.delete');
-        })->name('admin.comment');
-        Route::prefix('rating')->group(function(){
-            Route::get('', [AdminRatingController::class, 'index'])->name('admin.rating.index');
-            Route::post('edit/{id}', [AdminRatingController::class, 'edit'])->name('admin.rating.edit');
-            Route::get('detele/{id}', [AdminRatingController::class, 'delete'])->name('admin.rating.delete');
-        })->name('admin.rating');
+        Route::prefix('review')->group(function(){
+            Route::get('', [AdminReviewController::class, 'index'])->name('admin.review.index');
+            Route::get('update/{id}', [AdminReviewController::class, 'update'])->name('admin.review.update');
+            Route::post('edit/{id}', [AdminReviewController::class, 'edit'])->name('admin.review.edit');
+            Route::get('delete/{id}',[AdminReviewController::class, 'delete'])->name('admin.review.delete');
+        })->name('admin.review');
         Route::prefix('account')->group(function(){
             Route::get('', [AdminAccountController::class, 'index'])->name('admin.account.index');
             Route::get('create', [AdminAccountController::class, 'create'])->name('admin.account.create');
@@ -156,20 +152,6 @@ Route::middleware(IsAdmin::class)->group(function(){
             Route::post('edit/{id}', [AdminAccountController::class, 'edit'])->name('admin.account.edit');
             Route::post('delete/{id}', [AdminAccountController::class, 'delete'])->name('admin.account.delete');
         })->name('admin.account');
-        // Route::prefix('news')->group(function(){
-        //     Route::get('', [AdminNewsController::class, 'index'])->name('admin.news.index');
-        //     Route::get('detail/{id}', [AdminNewsController::class, 'detail'])->name('admin.news.detail');
-        //     Route::get('create', [AdminNewsController::class, 'create'])->name('admin.news.create');
-        //     Route::post('store', [AdminNewsController::class, 'store'])->name('admin.news.store');
-        //     Route::post('update/{id}', [AdminNewsController::class, 'update'])->name('admin.news.update');
-        //     Route::get('delete/{id}', [AdminNewsController::class, 'delete'])->name('admin.news.delete');
-        // })->name('admin.news');   
-        // Route::prefix('log')->group(function(){
-        //     Route::get('', [AdminLogController::class, 'index'])->name('admin.log.index');
-        //     Route::get('login', [AdminLogController::class, 'login'])->name('admin.log.login');
-        //     Route::get('search/product', [AdminLogController::class, 'search'])->name('admin.log.search');
-        //     Route::get('order', [AdminLogController::class, 'order'])->name('admin.log.order.search');
-        // })->name('admin.log');
         Route::prefix('aboutus')->group(function(){
             Route::get('', [AdminAboutusController::class,'index'])->name('admin.aboutus.index');
             Route::post('edit', [AdminAboutusController::class,'edit'])->name('admin.aboutus.edit');

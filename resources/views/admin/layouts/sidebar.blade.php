@@ -105,22 +105,8 @@
               </p>
             </a>
           </li>
-          {{-- <li class="nav-item">
-            <a href="{{ route('admin.news.index') }}" class="nav-link @if(request()->is('admin/news*')) {{'active'}} @endif">
-              <p>
-                Tin tức
-              </p>
-            </a>
-          </li> --}}
           <li class="nav-item">
-            <a href="{{ route('admin.comment.index') }}" class="nav-link @if(request()->is('admin/comment*')) {{'active'}} @endif">
-              <p>
-                Bình luận
-              </p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="{{ route('admin.rating.index') }}" class="nav-link @if(request()->is('admin/rating*')) {{'active'}} @endif">
+            <a href="{{ route('admin.review.index') }}" class="nav-link @if(request()->is('admin/rating*')) {{'active'}} @endif">
               <p>
                 Đánh giá
               </p>

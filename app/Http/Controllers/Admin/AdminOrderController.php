@@ -56,9 +56,9 @@ class AdminOrderController extends Controller
 
     public function delete($id){
         try {
-            $order = Order::find($id);
-            $order->detele();
+            $order = Order::where('id',$id);
             $orderProduct = OrderProduct::where('order_id', $id);
+            $order->delete();
             $orderProduct->delete();
             return redirect()->route('admin.order.index')->with('success','Xóa thành công');
         } catch (\Throwable $th) {
