@@ -18,7 +18,7 @@ return new class extends Migration
             $table->integer('order_id');
             $table->integer('product_id');
             $table->integer('origin_price');
-            $table->integer('sale_id');
+            $table->integer('sale_id')->nullable();
             $table->integer('final_price');
             $table->integer('quantity');
             $table->timestamps();

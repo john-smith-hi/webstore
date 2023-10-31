@@ -74,11 +74,11 @@
                     </div>
                     <div class="col-md-6 form-group">
                         <label>Số điện thoại</label>
-                        <input class="form-control" type="number" placeholder="123 456 789" name="tel" value="{{$tel}}" required>
+                        <input class="form-control" type="number" placeholder="123 456 789" name="tel" value="{{$tel}}">
                     </div>
                     <div class="col-md-12 form-group">
                         <label>Địa chỉ</label>
-                        <input class="form-control" type="text" placeholder="123 Đường A Tp HCM" name="address" value="{{$address}}" required>
+                        <input class="form-control" type="text" placeholder="123 Đường A Tp HCM" name="address" value="{{$address}}">
                     </div>
                 </div>
             </div>

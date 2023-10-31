@@ -327,9 +327,9 @@
                         </a>
                         <div class="d-flex justify-content-center">
                             @if($isSaling)
-                                <h6>{{number_format($originPrice,0,',','.').' đ'}}</h6><h6 class="text-muted ml-2"></h6>
-                            @else
                                 <h6>{{number_format($realPrice,0,',','.').' đ'}}</h6><h6 class="text-muted ml-2"><del>{{number_format($originPrice,0,',','.').' đ'}}</del></h6>
+                            @else
+                                <h6>{{number_format($originPrice,0,',','.').' đ'}}</h6><h6 class="text-muted ml-2"></h6>
                             @endif
                         </div>
                     </div>

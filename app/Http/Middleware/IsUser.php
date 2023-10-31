@@ -20,6 +20,6 @@ class IsUser
         if(Auth::check() && Auth::user()->role==0){
             return $next($request);
         }
-        return abort(404);
+        return redirect()->route('login.index');
     }
 }

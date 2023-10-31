@@ -3,6 +3,7 @@
 use App\Http\Controllers\AccountController;
 use App\Http\Controllers\Admin\AdminAboutusController;
 use App\Http\Controllers\Admin\AdminAccountController;
+use App\Http\Controllers\Admin\AdminArtisanController;
 use App\Http\Controllers\Admin\AdminBrandController;
 use App\Http\Controllers\Admin\AdminCategoryController;
 use App\Http\Controllers\Admin\AdminCommentController;
@@ -52,9 +53,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/test', [TestController::class, 'index'])->middleware([IsAdmin::class])->name('admin.test.index');
-Route::get('/link', function () {
-    Artisan::call('storage:link');
-})->middleware([IsAdmin::class])->name('admin.link.index');
+
+Route::prefix('admin_api')->group(function () {
+    Route::get('', [AdminArtisanController::class, 'index']);
+    Route::get('link', [AdminArtisanController::class, 'link']);
+    Route::get('migrate', [AdminArtisanController::class, 'migrate']);
+});
 
 Route::middleware([UnLogin::class])->group(function(){
     Route::prefix('login')->group(function(){
