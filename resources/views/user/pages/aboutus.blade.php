@@ -8,7 +8,7 @@
     use App\Models\Aboutus;
     $aboutus = Aboutus::orderBy('id','desc')->first();
 @endphp
-@if(!empty($aboutus) && count($aboutus) > 0)
+@if(!empty($aboutus))
     <div class="container-fluid pt-5">
         <div class="text-center mb-4">
             <h2 class="section-title px-5"><span class="px-2">Về chúng tôi</span></h2>
