@@ -18,7 +18,8 @@ Cập nhật
     @php
       use App\Models\Aboutus;
       $aboutus = Aboutus::orderBy('id','desc')->first();
-      $text = (!empty(old('text'))) ? old('text') : $aboutus->text;
+      $text = (!empty($aboutus)) ? $aboutus->text : '';
+      $text = (!empty(old('text'))) ? old('text') : $text;
     @endphp
     <div class="form-row">
       <div class="form-group col-md-12">
