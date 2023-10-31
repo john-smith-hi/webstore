@@ -55,7 +55,7 @@
             </div>
             {{-- End rating  --}}
             @if($isSaling)
-                <h3 class="font-weight-semi-bold mb-4">{{number_format($realPrice,0,'.',',').' đ'}}<del class="text-muted ml-2">{{number_format($originPrice,0,',','.').' đ'}}</del></h3>
+                <h3 class="font-weight-semi-bold mb-4">{{number_format($realPrice,0,',','.').' đ'}}<del class="text-muted ml-2">{{number_format($originPrice,0,',','.').' đ'}}</del></h3>
             @else
                 <h3 class="font-weight-semi-bold mb-4">{{number_format($originPrice,0,',','.').' đ'}}</h3>
             @endif
