@@ -27,7 +27,7 @@ class UserProductController extends Controller
                                         ->orWhere('CAT2.slug','like','%'.$parent_category_slug.'%');
                                 })
                                 ->orderBy('products.id','desc')
-                                ->paginate(env('USER_PAGINATE_RELATIVE_PRODUCT_NUMBER',10));
+                                ->take(env('USER_PAGINATE_RELATIVE_PRODUCT_NUMBER',10));
         return view('user.pages.productdetail',[
             'product' => $product,
             'relativeProducts' => $relativeProducts,

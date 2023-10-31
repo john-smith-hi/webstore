@@ -346,7 +346,6 @@
             </div>
         @endforeach
     </div>
-    {{$relativeProducts->links()}}
 </div>
 @endif
 {{-- Product Relative End  --}}
