@@ -32,4 +32,6 @@ Sản phẩm - bổ sung cột đánh giá Admin
 softdelete
 log
 
+relative product
+
 

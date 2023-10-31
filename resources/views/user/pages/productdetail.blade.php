@@ -300,7 +300,7 @@
 </div>
 <!-- Shop Detail End -->
 {{-- Product Relative Start  --}}
-@if(!empty($relativeProducts) && count($relativeProducts)>0)
+@if(!empty($relativeProducts))
 <div class="container-fluid pt-5">
     <div class="text-center mb-4">
         <h2 class="section-title px-5"><span class="px-2">Sản phẩm liên quan</span></h2>
