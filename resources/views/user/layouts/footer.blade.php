@@ -20,6 +20,7 @@
                         <a class="text-dark mb-2" href="{{route('user.brand.index')}}"><i class="fa fa-angle-right mr-2"></i>Thương hiệu</a>
                         <a class="text-dark mb-2" href="{{route('user.contact.index')}}"><i class="fa fa-angle-right mr-2"></i>Liên hệ</a>
                         <a class="text-dark mb-2" href="{{route('user.aboutus')}}"><i class="fa fa-angle-right mr-2"></i>Giới thiệu</a>
+                        <a class="text-dark mb-2" href="{{route('user.home').'/sitemap.xml'}}"><i class="fa fa-angle-right mr-2"></i>Sitemap</a>
                     </div>
                 </div>
                 <div class="col-md-4 mb-5">
