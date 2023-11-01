@@ -95,9 +95,9 @@ class UserCheckoutController extends Controller
                         $order_product->product_id = $product_id;
                         $order_product->origin_price = $originPrice;
                         $order_product->sale_id = $isSaling;
-                        $order_product->final_price = $realPrice;
+                        $order_product->final_price = ($isSaling) ? $realPrice : $originPrice;
                         $order_product->quantity = $quantity_arr[$key];
-                        $total += $realPrice*$quantity_arr[$key];
+                        $total += $order_product->final_price*$quantity_arr[$key];
                         $order_product->save();
                     }
                     $order->total = $total;

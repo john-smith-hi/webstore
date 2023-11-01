@@ -34,4 +34,12 @@ log
 
 relative product
 
+gannon.ns.cloudflare.com
+mona.ns.cloudflare.com
+
+ns-1214.awsdns-23.org
+ns-134.awsdns-16.com
+ns-1945.awsdns-51.co.uk
+ns-642.awsdns-16.net
+
 
