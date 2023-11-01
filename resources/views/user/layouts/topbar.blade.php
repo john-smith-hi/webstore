@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="utf-8">
+    <meta name="google-site-verification" content="b37i3Or4rS9zHZ7aqR6d-VgdUXJjUoAL-Pw6cxcc2g0" />
     <title>@if(!empty($title)){{$title}}@else{{env('STORE_NAME','PenWeb')}}@endif</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
