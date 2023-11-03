@@ -42,4 +42,6 @@ ns-134.awsdns-16.com
 ns-1945.awsdns-51.co.uk
 ns-642.awsdns-16.net
 
+phân nhân viên và quản trị
+Reset trang sau mỗi .... giây nếu người dùng không thao tác
 

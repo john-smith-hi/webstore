@@ -6,6 +6,7 @@ use App\Helper\ProductHelper;
 use App\Models\Cart;
 use App\Models\Order;
 use App\Models\Product;
+use App\Models\ProductImage;
 use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -200,5 +201,16 @@ class StartSeeder extends Seeder
         //     $order->total = $total;
         //     $order->update();
         // }
+
+        // DB : product_images 
+        $product_images = ProductImage::get();
+        foreach ($product_images as $key => $product_image) {
+            $product_id = $product_image->id;
+            $products = DB::table('products as PRO1')
+                            ->join('categories as CAT1','products.category_id','CAT1.id')
+                            ->leftJoin('categories as CAT2', 'CAT1.parent_id','CAT2.id')
+                            ->select('PRO1.id','CAT1.id as child_id','CAT2 as parent_id')
+                            ->where('PRO1.id', $product_image->product_id);
+        }
     }
 }

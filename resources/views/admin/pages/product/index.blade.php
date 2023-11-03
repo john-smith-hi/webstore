@@ -57,8 +57,7 @@ Danh sách
                 <td>{{ StorageHelper::Quantity($product->id) }}</td>
                 <td>
                     <a href="{{route('admin.sale.index').'?product_name='.$product->name}}">Khuyến mãi</a>-
-                    <a href="{{route('admin.comment.index').'?product_id='.$product->id}}">Bình luận</a>-
-                    <a href="{{route('admin.rating.index').'?product_id='.$product->id}}">Đánh giá</a>-
+                    <a href="{{route('admin.review.index').'?product_id='.$product->id}}">Đánh giá</a>-
                     <a href="{{route('admin.storage.input.index', ['product_id'=>$product->id])}}">Nhập kho</a>-
                     <a href="{{route('admin.storage.output.index', ['product_id'=>$product->id])}}">Xuất kho</a>
                 </td>
