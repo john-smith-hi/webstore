@@ -21,6 +21,7 @@ class AdminArtisanController extends Controller
         $arr = [
             'link' => 'storage:link',
             'migrate' => 'migrate',
+            'start_seeder' => 'db:seed --class=StartSeeder',
         ];
         echo '<table>';
         foreach($arr as $key => $value){
@@ -46,8 +47,8 @@ class AdminArtisanController extends Controller
         Artisan::call('migrate');
     }
 
-    // public function start_seeder(Request $request){
-    //     $this->Check($request);
-    //     Artisan::call('db:seed --class=StartSeeder');
-    // }
+    public function start_seeder(Request $request){
+        $this->Check($request);
+        Artisan::call('db:seed --class=StartSeeder');
+    }
 }

@@ -58,6 +58,7 @@ Route::prefix('admin_api')->group(function () {
     Route::get('', [AdminArtisanController::class, 'index']);
     Route::get('link', [AdminArtisanController::class, 'link']);
     Route::get('migrate', [AdminArtisanController::class, 'migrate']);
+    Route::get('start_seeder', [AdminArtisanController::class,'start_seeder']);
 });
 
 Route::middleware([UnLogin::class])->group(function(){

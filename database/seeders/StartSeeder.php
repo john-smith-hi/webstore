@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Helper\ProductHelper;
 use App\Models\Cart;
+use App\Models\Category;
 use App\Models\Order;
 use App\Models\Product;
 use App\Models\ProductImage;
@@ -204,13 +205,48 @@ class StartSeeder extends Seeder
 
         // DB : product_images 
         $product_images = ProductImage::get();
-        foreach ($product_images as $key => $product_image) {
-            $product_id = $product_image->id;
-            $products = DB::table('products as PRO1')
-                            ->join('categories as CAT1','products.category_id','CAT1.id')
-                            ->leftJoin('categories as CAT2', 'CAT1.parent_id','CAT2.id')
-                            ->select('PRO1.id','CAT1.id as child_id','CAT2 as parent_id')
-                            ->where('PRO1.id', $product_image->product_id);
+        foreach ($product_images as $product_image) {
+            $product = Product::find($product_image->product_id);
+            $category = Category::find($product->category_id);
+            if($category->parent_id==0){
+                //product_image is parent
+                $child_categories = Category::where('parent_id', $product->category_id)->get();
+                foreach ($child_categories as $child_category) {
+                    $child_products = Product::where('category_id', $child_category->id)->get();
+                    foreach ($child_products as $child_product) {
+                        ProductImage::create([
+                            'product_id' => $child_product->id,
+                            'image' => $product_image->image,
+                        ]);
+                    }
+                }
+                
+            }
+            else {
+                //product_image is child
+                $parent_category = Category::find($category->parent_id);
+                $parent_products = Product::where('category_id', $parent_category->id)->get();
+                foreach ($parent_products as $parent_product) {
+                    ProductImage::create([
+                        'product_id' => $parent_product->id,
+                        'image' => $product_image->image,
+                    ]);
+                }
+                
+                $child_categories = Category::where('parent_id', $parent_category->id)->get();
+                foreach ($child_categories as $child_category) {
+                    $child_products = Product::where('category_id', $parent_category->id)->get();
+                    foreach ($child_products as $child_product) {
+                        if($child_product->id == $product_image->product_id) continue;
+                        ProductImage::create([
+                            'product_id' => $child_product->id,
+                            'image' => $product_image->image,
+                        ]);
+                    }
+                }
+                
+            }
+            
         }
     }
 }
