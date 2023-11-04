@@ -2,7 +2,7 @@
 @php
     use App\Helper\ProductHelper;
     use App\Models\Product;
-    $trend_products = Product::orderBy('id','desc')->take(env('USER_HOME_TREND_PRODUCT_NUMBER', 12))->get();
+    $trend_products = Product::orderBy('id','asc')->take(env('USER_HOME_TREND_PRODUCT_NUMBER', 12))->get();
 @endphp
 @if(!empty($trend_products) && count($trend_products)>0)
     <div class="container-fluid pt-5">
