@@ -38,7 +38,10 @@
             <div class="col-lg-6 col-6 text-left">
                 <form action="{{route('user.search')}}" method="GET" id="search_form_home">
                     <div class="input-group">
-                        <input type="text" class="form-control" name="name" placeholder="Tìm kiếm sản phẩm">
+                        @php
+                            $name = (Request::input('name'));
+                        @endphp
+                        <input type="text" class="form-control" value="{{$name}}" name="name" placeholder="Tìm kiếm sản phẩm">
                         <div class="input-group-append">
                             <span id="search_button_home" class="input-group-text bg-transparent text-primary" style="cursor: pointer">
                                 <i class="fa fa-search"></i>

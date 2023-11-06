@@ -120,7 +120,7 @@
                     <div class="col-12 pb-1">
                         <div class="d-flex align-items-center justify-content-between mb-4">
                                 <div class="input-group">
-                                    <input type="text" class="form-control" placeholder="Tên sản phẩm" name="name" value="@if(!empty($name)){{$name}}@endif">
+                                    <input type="text" class="form-control" placeholder="Tên sản phẩm" name="name" value="@if(!empty($name_search)){{$name_search}}@endif">
                                     <div class="input-group-append">
                                         <span class="input-group-text bg-transparent text-primary">
                                             <i class="fa fa-search"></i>

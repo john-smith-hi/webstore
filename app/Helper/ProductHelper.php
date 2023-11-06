@@ -59,7 +59,7 @@ class ProductHelper{
         $image = ProductImage::where('product_id',$product_id)->first();
         if(!empty($image))
             return $image->image;
-        return "";
+        return ProductImage::inRandomOrder()->first();
     }
 
     public static function AllImage($product_id= "0"){
