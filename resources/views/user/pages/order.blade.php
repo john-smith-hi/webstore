@@ -37,7 +37,7 @@
                                         </a>
                                     </td>
                                     <td class="align-center">{{number_format($product->origin_price,0,',','.').' đ'}}</td>
-                                    <td class="align-center">{{number_format($product->final_price,0,',','.').' đ'}}</td>
+                                    <td class="align-center">@if($product->origin_price !== $product->final_price){{number_format($product->final_price,0,',','.').' đ'}}@endif</td>
                                     <td class="align-center">{{$product->quantity}}</td>
                                     <td class="align-center">{{number_format($total_row,0,',','.').' đ'}}</td>
                                 </tr>
