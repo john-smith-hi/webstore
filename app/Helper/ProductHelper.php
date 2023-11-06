@@ -66,7 +66,7 @@ class ProductHelper{
         $images = ProductImage::where("product_id",$product_id);
         if(!empty($images) && $images->count()>0)
             return $images->get();
-        return ProductImage::inRandomOrder()->take(3);
+        return ProductImage::inRandomOrder()->take(3)->get();
     }
 
     public static function Rating( $product_id= "0"){

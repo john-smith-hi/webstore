@@ -15,7 +15,7 @@ use App\Models\Category;
 class TestController extends Controller
 {
     public function index(){
-        dd(ProductImage::inRandomOrder()->take(3));
+        dd(ProductImage::inRandomOrder()->take(3)->get());
     }
 
 }
