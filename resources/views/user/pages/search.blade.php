@@ -10,7 +10,7 @@
             <!-- Shop Sidebar Start -->
             <div class="col-lg-3 col-md-12">
                 <!-- Price Start -->
-                <div class="border-bottom mb-4 pb-4">
+                {{-- <div class="border-bottom mb-4 pb-4">
                     <h5 class="font-weight-semi-bold mb-4">Giá tiền</h5>
                         <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
                             <input type="radio" class="custom-control-input"
@@ -60,7 +60,7 @@
                             id="price-5" name="price" value="5000000-">
                             <label class="custom-control-label" for="price-5">>=5.000.000 đ</label>
                         </div>
-                </div>
+                </div> --}}
                 <!-- Price End -->
                 
                 <!-- Category Start -->
@@ -263,7 +263,7 @@
                     
                     @endforeach
                 </div>
-                {{$products->links()}}
+                {{$products->appends(request()->query())->links()}}
             </div>
             <!-- Shop Product End -->
         </div>
