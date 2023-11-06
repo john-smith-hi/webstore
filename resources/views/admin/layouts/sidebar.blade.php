@@ -23,15 +23,13 @@
       <!-- Sidebar Menu -->
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-          <!-- Add icons to the links using the .nav-icon class
-               with font-awesome or any other icon font library -->
-          <li class="nav-item">
+          {{-- <li class="nav-item">
             <a href="{{ route('admin.home.index') }}" class="nav-link @if(request()->is('admin')) {{'active'}} @endif">
               <p>
                 Trang chủ
               </p>
             </a>
-          </li>
+          </li> --}}
           <li class="nav-item">
             <a href="{{ route('admin.profile.index') }}" class="nav-link @if(request()->is('admin/profile*')) {{'active'}} @endif">
               <p>
@@ -105,13 +103,13 @@
               </p>
             </a>
           </li>
-          <li class="nav-item">
+          {{-- <li class="nav-item">
             <a href="{{ route('admin.review.index') }}" class="nav-link @if(request()->is('admin/rating*')) {{'active'}} @endif">
               <p>
                 Đánh giá
               </p>
             </a>
-          </li>
+          </li> --}}
           <li class="nav-item">
             <a href="{{ route('admin.account.index') }}" class="nav-link @if(request()->is('admin/account*')) {{'active'}} @endif">
               <p>

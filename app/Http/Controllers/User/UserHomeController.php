@@ -11,11 +11,11 @@ use App\Models\ProductImage;
 use App\Models\SaleProduct;
 use App\Models\Slide;
 use Illuminate\Http\Request;
-use Illuminate\Support\Carbon;
+
 
 
 class UserHomeController extends Controller
-{
+{   
     public function index(){
         return view('user.pages.home',[
             'title' => 'Trang chủ - '.env('STORE_NAME','PenWeb'),
