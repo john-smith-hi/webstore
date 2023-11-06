@@ -24,6 +24,7 @@
                     $realPrice = ($isSaling) ? ProductHelper::RealPrice($sale_product->id) : '';
                     $firstImage = ProductHelper::FirstImage($sale_product->id);
                 @endphp
+                @if($isSaling)
                 <div class="col-lg-2 col-md-3 col-sm-6 col-6">
                     <div class="card product-item border-0 mb-4">
                         <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
@@ -55,6 +56,7 @@
                         </div>
                     </div>
                 </div>
+                @endif
             @endforeach
         </div>
     </div>
