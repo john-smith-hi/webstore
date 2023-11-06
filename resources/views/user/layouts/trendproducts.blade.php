@@ -21,10 +21,14 @@
                 <div class="col-lg-2 col-md-3 col-sm-6 col-6">
                     <div class="card product-item border-0 mb-4">
                         <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                            <img class="img-fluid w-100" src="{{$firstImage}}" alt="">
+                            <a href="{{route('user.product.index',['slug'=>$trend_product->slug])}}">
+                                <img class="img-fluid w-100" src="{{$firstImage}}" alt="">
+                            </a>
                         </div>
                         <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
-                            <h6 class="text-truncate mb-3">{{$trend_product->name}}</h6>
+                            <a href="{{route('user.product.index',['slug'=>$trend_product->slug])}}">
+                                <h6 class="text-truncate mb-3">{{$trend_product->name}}</h6>
+                            </a>
                             <div class="d-flex justify-content-center">
                                 @if($isSaling)
                                     <h6>{{number_format($realPrice,0,',','.').' đ'}}</h6><h6 class="text-muted ml-2"><del>{{number_format($originPrice,0,',','.').' đ'}}</del></h6>
