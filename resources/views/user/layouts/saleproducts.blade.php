@@ -6,6 +6,8 @@
     $sale_products = Product::join('sale_products', 'products.id','sale_products.product_id')
                                 ->where('sale_products.start_date','<=',Carbon::now())
                                 ->where('sale_products.finish_date','>=',Carbon::now())
+                                ->where('sale_products.sale_price','<>',0)
+                                ->orWhere('sale_products.sale_percent','<>',0)
                                 ->select('products.*')
                                 ->inRandomOrder()->take(env('USER_HOME_SALE_PRODUCT_NUMBER',12))->get();
 @endphp
