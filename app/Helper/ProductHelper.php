@@ -63,9 +63,9 @@ class ProductHelper{
     }
 
     public static function AllImage($product_id= "0"){
-        $images = ProductImage::where("product_id",$product_id)->get();
-        if(!empty($images) && count($images)>0)
-            return $images;
+        $images = ProductImage::where("product_id",$product_id);
+        if(!empty($images) && $images->count()>0)
+            return $images->get();
         return ProductImage::inRandomOrder()->take(3);
     }
 
